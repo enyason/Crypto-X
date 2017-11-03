@@ -10,11 +10,9 @@ Submitted by: **Enya Emmanuel**, **08188837623**, **enyasonjnr@gmail.com**
 
 The following **required** functionality is completed:
 
-* [ ]Users can create cards on the application screen to show the 
+* [ ] Users can create cards on the application screen to show the 
 	exchange rate between
-* [ ] Clicking each card should take you to conversion screen.
-	User can enter an amount to be converted in a base currency
-	User should get conversion result
+* [ ] Clicking each card should take you to conversion screen. User can 	enter an amount to be converted in a base currency User should get  	conversion result
 
 
 
