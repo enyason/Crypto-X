@@ -1,6 +1,6 @@
 # Cryto-X*
 
-**Cryto-X App** is an android app that allows user view current cryptocurrency exchange rate with 20 top wold currencyes in cards.Also users can carry out conversion by clicking on the card which takes take to the converter screen.
+**Cryto-X App** is an android app that allows user view current cryptocurrency exchange rate with 20 top wold currency in cards.Also users can carry out conversion by clicking on the card which takes take to the converter screen.
 
 Submitted by: **Enya Emmanuel**, **08188837623**, **enyasonjnr@gmail.com**
 
