@@ -1,0 +1,105 @@
+package com.example.android.crypto_x;
+
+import android.content.Context;
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static java.security.AccessController.getContext;
+
+/**
+ * Created by Enyason on 10/14/2017.
+ */
+
+public class RecyclerAdapter extends RecyclerView.Adapter<CrypToViewHolder> {
+
+    //declare list
+    List<CryptoX> cryptoXList = new ArrayList<>();
+    List<Double> listBtc = new ArrayList<>();
+    List<Double> listEth = new ArrayList<>();
+    Context context;
+
+
+    public RecyclerAdapter(Context context,List<CryptoX> cryptoXList, List<Double> listBtc, List<Double> listEth) {
+
+        //initialize variables
+        this.cryptoXList = cryptoXList;
+        this.context = context;
+        this.listBtc = listBtc;
+        this.listEth = listEth;
+    }
+
+    @Override
+    public CrypToViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+
+        //inflate recycler custom row view
+        View rootView = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_view, parent, false);
+
+
+        //instantiate view holder
+        CrypToViewHolder crypToViewHolder = new CrypToViewHolder(rootView, listBtc, listEth);
+
+        return crypToViewHolder;
+
+    }
+
+    @Override
+    public void onBindViewHolder(CrypToViewHolder holder, final int position) {
+
+        //get model class attributes
+        CryptoX cryptoX = cryptoXList.get(position);
+
+        String coinType = cryptoX.getCoinType();
+
+        //set up item view
+        holder.setUpSpinner();
+        holder.onClickSpinner(coinType);
+        holder.setUpImage(coinType);
+        holder.coinType = coinType;
+
+        //handle delete of card
+        holder.imageViewDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                //alert dialog
+                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                builder.setMessage("Click OK to delete card");
+
+
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        delete(position);
+                    }
+                });
+                builder.show();
+
+            }
+        });
+
+
+    }
+
+    public void delete(int position) {
+        //removes the row
+        cryptoXList.remove(position);
+        notifyItemRemoved(position);
+
+    }
+
+    @Override
+    public int getItemCount() {
+
+        //return number items to populate
+        return cryptoXList.size();
+
+    }
+}

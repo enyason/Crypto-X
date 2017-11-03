@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_settings"
+        android:icon="@drawable/ic_more_vert_white"
+        android:orderInCategory="100"
+        android:title=""
+        app:showAsAction="always">
+
+        <menu>
+
+
+            <item
+                android:id="@+id/action_clear_cards"
+                android:icon="@drawable/ic_clear_all"
+                android:title="@string/clear_cards" />
+            <item
+                android:id="@+id/action_help"
+                android:icon="@drawable/ic_help_outline"
+                android:title="@string/help" />
+
+            <item
+                android:id="@+id/action_about"
+                android:icon="@drawable/ic_about"
+                android:title="@string/about" />
+
+
+        </menu>
+    </item>
+
+</menu>

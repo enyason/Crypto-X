@@ -1,0 +1,65 @@
+<resources>
+    <string name="app_name">Crypto-X</string>
+    <string name="clear_cards">Clear cards</string>
+    <string name="help">Help</string>
+    <string name="about">About</string>
+    <string name="help_msg">
+        Click on the floating action button to create a card to display crypto currency and exchange rates between 20 major currencies\n\nClick on a card to use crypto converter
+
+    </string>
+    <string name="about_msg">Crypto-X fetches recent exchange rates from online API  and displays as cards. Made by Enya Emmanuel,08188837623,enyasonjnr@gmail.com</string>
+    <string name="fetch_exchange_rate">Fetching Exchange Rate</string>
+    <string name="press_again">Press again to exit</string>
+    <string name="crypto_currency_converter">Currency Converter</string>
+
+
+    <string-array name="currency">
+
+        <item>USD</item>
+        <item>EUR</item>
+        <item>NGN</item>
+        <item>CNY</item>
+        <item>CAD</item>
+        <item>ZAR</item>
+        <item>RUB</item>
+        <item>BRL</item>
+        <item>AUD</item>
+        <item>INR</item>
+        <item>SAR</item>
+        <item>AED</item>
+        <item>GHS</item>
+        <item>CLP</item>
+        <item>NOK</item>
+        <item>XOF</item>
+        <item>THB</item>
+        <item>JMD</item>
+        <item>KRW</item>
+        <item>TRY</item>
+
+    </string-array>
+
+    <string-array name="symbol">
+
+        <item>$</item>
+        <item>€</item>
+        <item>₦</item>
+        <item>¥</item>
+        <item>$</item>
+        <item>R</item>
+        <item>руб</item>
+        <item>R$</item>
+        <item>$</item>
+        <item>₨</item>
+        <item>ر.س</item>
+        <item>د.إ</item>
+        <item>‎₵</item>
+        <item>CL$</item>
+        <item>øre</item>
+        <item>franc</item>
+        <item>฿</item>
+        <item>$</item>
+        <item>₩</item>
+        <item>₺</item>
+
+    </string-array>
+</resources>
