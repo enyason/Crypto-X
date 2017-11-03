@@ -20,7 +20,5 @@ Here's a walkthrough of implemented user stories:
 
 click link to see video walthrough https://i.imgur.com/IgoinLd.gif
 
-<img src='https://i.imgur.com/IgoinLd.gif' title='ToDo App Video Walkthrough' width='600' alt='Video Walkthrough' />
-
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
