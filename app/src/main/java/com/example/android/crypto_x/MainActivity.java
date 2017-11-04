@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity implements ActivityFragmentC
     private FloatingActionButton floatingActionButton;
     private ProgressDialog pb;
     private Toolbar mToolbar;
+    private TextView emptyView;
 
 
     @Override
@@ -61,6 +63,8 @@ public class MainActivity extends AppCompatActivity implements ActivityFragmentC
 //       set up android views
         mToolbar = (Toolbar) findViewById(R.id.toolbar_home);
         setSupportActionBar(mToolbar);
+
+        emptyView = (TextView)findViewById(R.id.tv_emptyView);
 
         floatingActionButton = (FloatingActionButton) findViewById(R.id.cryto_fab);
         cryptoRecyclerView = (RecyclerView) findViewById(R.id.crytoRecyclerView);
@@ -129,6 +133,7 @@ public class MainActivity extends AppCompatActivity implements ActivityFragmentC
             public void onResponse(Call call, Response response) throws IOException {
                 pb.dismiss();
 
+
                 final String crytoResponse = response.body().string(); //API response
 
 
@@ -169,6 +174,7 @@ public class MainActivity extends AppCompatActivity implements ActivityFragmentC
 
                         cryptoXList.add(new CryptoX(coinType)); // add new item to list
                         adapter.notifyItemInserted(cryptoXList.size()); // notify adapter of change
+                        emptyView.setVisibility(View.INVISIBLE);
 
                     }
                 });
@@ -193,10 +199,7 @@ public class MainActivity extends AppCompatActivity implements ActivityFragmentC
 
             case R.id.action_clear_cards:
                 //clear cards
-                cryptoXList.clear();
-                adapter.notifyDataSetChanged();
-                listBtc.clear();
-                listEth.clear();
+                clearAll();
                 break;
             case R.id.action_help:
                 //show alert help
@@ -207,6 +210,15 @@ public class MainActivity extends AppCompatActivity implements ActivityFragmentC
                 showAboutAlert();
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void clearAll(){
+        cryptoXList.clear();
+        adapter.notifyDataSetChanged();
+        listBtc.clear();
+        listEth.clear();
+        emptyView.setVisibility(View.VISIBLE);
+
     }
 
     public void showHelpAlert() {
