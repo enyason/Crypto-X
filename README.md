@@ -20,5 +20,7 @@ Here's a walkthrough of implemented user stories:
 
 click link to see video walthrough https://i.imgur.com/IgoinLd.gif
 
+click link to download updated apk https://drive.google.com/open?id=0B27Q5EUw2FOtZmhGUlJIS251UWM
+
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
