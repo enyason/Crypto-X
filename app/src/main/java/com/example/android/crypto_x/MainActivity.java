@@ -33,7 +33,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class MainActivity extends AppCompatActivity implements ActivityFragmentCommunicator {
+public class MainActivity extends AppCompatActivity implements ActivityFragmentCommunicator,RecyclerAdapter.InterfaceDeleteListener{
 
 
     //declare recycler view
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements ActivityFragmentC
 
         //set up recycler view
         layoutManager = new GridLayoutManager(this, 2);
-        adapter = new RecyclerAdapter(this,cryptoXList, listBtc, listEth);
+        adapter = new RecyclerAdapter(this,this,cryptoXList, listBtc, listEth);
         cryptoRecyclerView.setLayoutManager(layoutManager);
         cryptoRecyclerView.setAdapter(adapter);
 
@@ -265,4 +265,8 @@ public class MainActivity extends AppCompatActivity implements ActivityFragmentC
         }
     }
 
+    @Override
+    public void onButtonYesCLicked() {
+        emptyView.setVisibility(View.VISIBLE);
+    }
 }

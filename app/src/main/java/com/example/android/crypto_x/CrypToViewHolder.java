@@ -40,13 +40,12 @@ public class CrypToViewHolder extends RecyclerView.ViewHolder {
 
 
 
-
-
     public CrypToViewHolder(View itemView, List<Double> listBtc, List<Double> listEth) {
         super(itemView);
 
         this.listBtc = listBtc;
         this.listEth = listEth;
+
 
 
         ctx = itemView.getContext();

@@ -25,14 +25,21 @@ public class RecyclerAdapter extends RecyclerView.Adapter<CrypToViewHolder> {
     List<Double> listEth = new ArrayList<>();
     Context context;
 
+    InterfaceDeleteListener listener;
 
-    public RecyclerAdapter(Context context,List<CryptoX> cryptoXList, List<Double> listBtc, List<Double> listEth) {
+    public interface InterfaceDeleteListener {
+
+        void onButtonYesCLicked();
+    }
+
+    public RecyclerAdapter(InterfaceDeleteListener listener,Context context,List<CryptoX> cryptoXList, List<Double> listBtc, List<Double> listEth) {
 
         //initialize variables
         this.cryptoXList = cryptoXList;
         this.context = context;
         this.listBtc = listBtc;
         this.listEth = listEth;
+        this.listener = listener;
     }
 
     @Override
@@ -66,7 +73,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<CrypToViewHolder> {
         //handle delete of card
         holder.imageViewDelete.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(final View v) {
+
+
 
 
                 //alert dialog
@@ -78,6 +87,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<CrypToViewHolder> {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         delete(position);
+
+                        if (!(cryptoXList.size() > 0)) {
+
+                            listener.onButtonYesCLicked();
+                        }
+
                     }
                 });
                 builder.show();
@@ -92,6 +107,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<CrypToViewHolder> {
         //removes the row
         cryptoXList.remove(position);
         notifyItemRemoved(position);
+        notifyDataSetChanged();
 
     }
 
