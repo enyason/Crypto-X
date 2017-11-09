@@ -4,13 +4,15 @@
     <string name="help">Help</string>
     <string name="about">About</string>
     <string name="help_msg">
-        Click on the floating action button to create a card to display crypto currency and exchange rates between 20 major currencies\n\nClick on a card to use crypto converter
+        1. Click on the floating action button to create a card to display crypto currency and exchange rates between 20 world major currencies.
+        \n\n2. Click on a card to use the crypto converter.
 
     </string>
-    <string name="about_msg">Crypto-X fetches recent exchange rates from online API  and displays as cards. Made by Enya Emmanuel,08188837623,enyasonjnr@gmail.com</string>
+    <string name="about_msg">Crypto-X fetches recent exchange rates between crypto currencies ( BTC and ETH ) and 20 world major currencies from online API, and displays it as a card. Made by Enya Emmanuel,08188837623,enyasonjnr@gmail.com</string>
     <string name="fetch_exchange_rate">Fetching Exchange Rate</string>
     <string name="press_again">Press again to exit</string>
     <string name="crypto_currency_converter">Currency Converter</string>
+    <string name="exit">Exit App</string>
 
 
     <string-array name="currency">

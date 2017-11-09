@@ -79,7 +79,6 @@ public class ConverterActivity extends AppCompatActivity {
                 }
 
 
-
             }
 
             @Override

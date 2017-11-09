@@ -208,6 +208,9 @@ public class MainActivity extends AppCompatActivity implements ActivityFragmentC
             case R.id.action_about:
                 //show alert about
                 showAboutAlert();
+                break;
+            case R.id.action_exit:
+                finish();
         }
         return super.onOptionsItemSelected(item);
     }
