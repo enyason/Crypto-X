@@ -68,7 +68,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<CrypToViewHolder> {
         holder.setUpSpinner();
         holder.onClickSpinner(coinType);
         holder.setUpImage(coinType);
-        holder.coinType = coinType;
+        holder.setCoinType(coinType);
 
         //handle delete of card
         holder.imageViewDelete.setOnClickListener(new View.OnClickListener() {

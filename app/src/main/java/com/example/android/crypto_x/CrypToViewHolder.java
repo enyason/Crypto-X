@@ -22,22 +22,21 @@ import java.util.List;
 // viewHolder class for the recyclerview
 public class CrypToViewHolder extends RecyclerView.ViewHolder {
 
-    Spinner spinnerCrypto;
-    TextView textViewCrytoValue;
-    TextView textViewSymbol;
-    ImageView imageCoin,imageViewDelete;
-    Context ctx;
+    private Spinner spinnerCrypto;
+    private TextView textViewCrytoValue;
+    private TextView textViewSymbol;
+    ImageView imageCoin, imageViewDelete;
+    private Context ctx;
 
-    List<Double> listBtc = new ArrayList<>();
-    List<Double> listEth = new ArrayList<>();
+    private List<Double> listBtc = new ArrayList<>();
+    private List<Double> listEth = new ArrayList<>();
 
     Double currentItemRate;
 
     String[] symbols;
     Resources resources;
     String mSymbol;
-    public static String coinType = "";
-
+    private String coinType = "";
 
 
     public CrypToViewHolder(View itemView, List<Double> listBtc, List<Double> listEth) {
@@ -47,13 +46,12 @@ public class CrypToViewHolder extends RecyclerView.ViewHolder {
         this.listEth = listEth;
 
 
-
         ctx = itemView.getContext();
         spinnerCrypto = (Spinner) itemView.findViewById(R.id.spinner_crypto);
         textViewCrytoValue = (TextView) itemView.findViewById(R.id.tv_crytoValue);
         textViewSymbol = (TextView) itemView.findViewById(R.id.tv_symbol);
         imageCoin = (ImageView) itemView.findViewById(R.id.image_coin);
-        imageViewDelete = (ImageView)itemView.findViewById(R.id.image_view_delete);
+        imageViewDelete = (ImageView) itemView.findViewById(R.id.image_view_delete);
 
         resources = ctx.getResources();
         symbols = resources.getStringArray(R.array.symbol);
@@ -70,13 +68,17 @@ public class CrypToViewHolder extends RecyclerView.ViewHolder {
 
                 String currentSymbol = mSymbol;
                 converterIntent.putExtra("baseRate", currentItemRate);
-                converterIntent.putExtra("currencySymbol",currentSymbol);
-                converterIntent.putExtra("coinType",coinType);
+                converterIntent.putExtra("currencySymbol", currentSymbol);
+                converterIntent.putExtra("coinType", coinType);
                 ctx.startActivity(converterIntent);
             }
         });
 
 
+    }
+
+    public void setCoinType(String coin) {
+        coinType = coin;
     }
 
 
@@ -92,8 +94,6 @@ public class CrypToViewHolder extends RecyclerView.ViewHolder {
 
 
     }
-
-
 
 
     //set up spinner onclick

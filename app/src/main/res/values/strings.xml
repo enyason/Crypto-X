@@ -8,7 +8,7 @@
         \n\n2. Click on a card to use the crypto converter.
 
     </string>
-    <string name="about_msg">Crypto-X fetches recent exchange rates between crypto currencies ( BTC and ETH ) and 20 world major currencies from online API, and displays it as a card. Made by Enya Emmanuel,08188837623,enyasonjnr@gmail.com</string>
+    <string name="about_msg">Crypto-X fetches recent exchange rates between crypto currencies ( BTC and ETH ) and 20 world major currencies from online API, and displays it as a card. Made by Enya Emmanuel, 08188837623, enyasonjnr@gmail.com</string>
     <string name="fetch_exchange_rate">Fetching Exchange Rate</string>
     <string name="press_again">Press again to exit</string>
     <string name="crypto_currency_converter">Currency Converter</string>
